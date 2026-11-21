@@ -27,3 +27,5 @@ Buka `index.html` menggunakan browser secara offline.
 
 Daftar fitur dan hasil pengujian lengkap akan dilengkapi sesuai
 instruksi Paket 3. Jangan mengerjakan bagian tersebut pada Paket 1.
+
+
