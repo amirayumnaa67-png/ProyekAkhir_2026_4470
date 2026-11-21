@@ -15,28 +15,53 @@
    margin, dan padding dasar halaman. */
 body {
   margin: 0;
-  font-family: 'Times New Roman', Times, serif;
+  min-height: 100vh;
+  padding: 24px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #263238;
+  background-color: #edf4f3;
 }
 
 /* TODO CSS-02: Atur lebar konten, posisi, padding, margin,
    border dan border-radius seperlunya. */
 .container {
-  font-size: 2rem; /* 2 x 16px = 32px */ 
+  width: min(720px, 100%);
+  margin: 0 auto;
+  padding: 8px;
+  font-size: 16px;
 }
 
 .kepala-halaman {
-   text-align: center;
-  color: #2cc85d;
-  margin-bottom: 25px;
+  margin-bottom: 24px;
+  text-align: center;
+  color: #176b64;
+}
+
+.kepala-halaman h1 {
+  margin: 0 0 8px;
+  font-size: 28px;
+}
+
+.kepala-halaman p {
+  margin: 0;
+  color: #526264;
+  line-height: 1.6;
 }
 
 .panel {
-   max-width: 600px;
+  max-width: 600px;
   margin: 20px auto;
-  padding: 25px;
-  border: 1px solid #b28585;
+  padding: 24px;
+  border: 1px solid #d6e3e1;
   border-radius: 12px;
-  background-color: #a77474;
+  background-color: #ffffff;
+  box-shadow: 0 4px 12px rgba(38, 50, 56, 0.08);
+}
+
+.panel h2 {
+  margin-top: 0;
+  margin-bottom: 18px;
+  color: #176b64;
 }
 
 /* TODO CSS-03: Atur ukuran input, padding, jarak antar elemen,
@@ -44,22 +69,29 @@ body {
 .form-baris {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 8px;
   margin-bottom: 18px;
 }
 
 .form-baris label {
-   font-weight: bold;
-  color: #a581b7;
+  font-weight: bold;
+  color: #37474f;
 }
 
 .form-baris input {
-   padding: 12px;
-  border: 1px solid #875555;
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #b7c9c6;
   border-radius: 8px;
   font-size: 16px;
-  width: 100%;
+  color: #263238;
+  background-color: #ffffff;
   box-sizing: border-box;
+}
+
+.form-baris input:focus {
+  border-color: #2b7a78;
+  outline: 3px solid #d7ecea;
 }
 
 .aksi {
@@ -69,6 +101,7 @@ body {
 }
 
 .aksi button {
+  flex: 1 1 120px;
   padding: 10px 18px;
   border: none;
   border-radius: 8px;
@@ -76,27 +109,77 @@ body {
   color: white;
   cursor: pointer;
   font-size: 15px;
+  font-weight: bold;
+}
+
+.aksi button:hover {
+  background-color: #06646d;
+}
+
+.aksi button:focus-visible {
+  outline: 3px solid #a8d9d6;
+  outline-offset: 2px;
 }
 
 /* TODO CSS-04: Rapikan daftar kegiatan, jumlah kegiatan, dan pesan
    status. Bedakan tampilan status berhasil dan gagal. */
 #daftarKegiatan {
-   padding-left: 25px;
-   margin-top: 15px;
+  margin: 12px 0 16px;
+  padding-left: 25px;
 }
 
 #daftarKegiatan li {
-
+  margin-bottom: 8px;
+  padding: 8px 10px;
+  border-bottom: 1px solid #e3ecea;
+  line-height: 1.4;
 }
 
 .ringkasan {
+  margin: 12px 0 8px;
+  color: #37474f;
 }
 
 #pesanStatus {
+  min-height: 24px;
+  margin: 10px 0 0;
+  padding: 10px 12px;
+  border-radius: 8px;
+  background-color: #f1f5f4;
+  line-height: 1.5;
 }
 
 #pesanStatus.berhasil {
+  border: 1px solid #b7dfc4;
+  color: #1f6135;
+  background-color: #eaf7ee;
 }
 
 #pesanStatus.gagal {
+  border: 1px solid #efb7b7;
+  color: #913535;
+  background-color: #fceeee;
+}
+
+@media (max-width: 600px) {
+  body {
+    padding: 12px;
+  }
+
+  .container {
+    padding: 0;
+  }
+
+  .kepala-halaman h1 {
+    font-size: 24px;
+  }
+
+  .panel {
+    margin: 12px auto;
+    padding: 18px;
+  }
+
+  .aksi button {
+    width: 100%;
+  }
 }
